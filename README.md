@@ -1,9 +1,9 @@
-#Playwright Test Automation Store
+# Playwright Test Automation Store
 
 This is a project using Playwright and Typescript to do web automation.
 
-#Install Packages
+# Install Packages
 npm init playwright@latest
 
-#To Run Test
+# To Run Test
 npx playwright test
