@@ -10,7 +10,7 @@ test.describe('HomePage', () => {
     })
 
     test('Navigate To HomePage', async ({ page }) => {
-        //Go To The HomePage
+        //Navigate To The HomePage
             await allure.severity('P1')
             await allure.step('Navigate To The Url', async () => {
             await homePage.navigate(); 

@@ -10,7 +10,7 @@ test.describe('Contact Us Page', () => {
         contactPage = new ContactPage(page);
     })
      test('Navigate To The Contact Us Page', async ({ page }) => {
-        //Navigate To The Url
+        //Navigate To The Url Site
             await allure.severity('P1')
             await allure.step('Navigate To The Url',async () => {
             await contactPage.navigateCont();
