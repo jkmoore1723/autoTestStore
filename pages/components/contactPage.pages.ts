@@ -28,7 +28,7 @@ export class ContactPage {
        await this.page.goto('https://automationteststore.com/index.php?rt=content/contact');
     }
     async signUpForm() {
-        await this.firstName.fill('James St.Patrick');
+        await this.firstName.fill('James StPatrick');
         await this.eMail.fill('james.stpatrick1723@icloud.com');
         await this.enqMessage.fill('This Is A Test Message To Contact The Company Page');
     }
