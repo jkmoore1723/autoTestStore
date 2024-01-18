@@ -11,6 +11,7 @@ test.describe('HomePage', () => {
 
     test('Navigate To HomePage', async ({ page }) => {
         //Go To The HomePage
+            await allure.severity('P1')
             await allure.step('Navigate To The Url', async () => {
             await homePage.navigate(); 
         });
@@ -23,6 +24,7 @@ test.describe('HomePage', () => {
 
     test('Click On HomePage Button To Return To HomePage', async ({ page }) => {
         //Go To The HomePage
+            await allure.severity('P1')
             await allure.step('Navigate To The Url', async () => {
             await homePage.navigate();
         });
@@ -45,6 +47,7 @@ test.describe('HomePage', () => {
 
     test('Verifying The Nav Links', async ({ page }) => {
          //Go To The HomePage
+            await allure.severity('P1')
             await allure.step('Navigate To The Url',async () => {
             await homePage.navigate(); 
             });
@@ -57,6 +60,7 @@ test.describe('HomePage', () => {
 
     test('Subscribe To News Letter', async ({ page }) => {
         //Go To The HomePage
+            await allure.severity('P1')
             await allure.step('Navigate To The Url',async () => {
             await homePage.navigate();
         });
@@ -78,6 +82,7 @@ test.describe('HomePage', () => {
 
     test('Search For An Item', async ({ page }) => {
         //Go To The HomePage
+            await allure.severity('P1')
             await allure.step('Navigate To The Url',async () => {
             await homePage.navigate();  
             });
@@ -100,6 +105,7 @@ test.describe('HomePage', () => {
 
     test('Change Currency', async ({ page }) => {
         //Go To The HomePage
+            await allure.severity('P1')
             await allure.step('Navigate To The Url',async () => {
             await homePage.navigate(); 
             });
@@ -117,6 +123,7 @@ test.describe('HomePage', () => {
 
     test('Social Media Link For Facebook', async ({ page }) => {
          //Go To The HomePage
+            await allure.severity('P1')
             await allure.step('Navigate To The Url',async () => {
             await homePage.navigate(); 
          });
@@ -135,6 +142,7 @@ test.describe('HomePage', () => {
 
     test('Social Media Link For Twitter', async ({ page }) => {
         //Go To The HomePage
+            await allure.severity('P1')
             await allure.step('Navigate To The Url',async () => {
             await homePage.navigate();
         });
@@ -154,6 +162,7 @@ test.describe('HomePage', () => {
     })
     test('Social Media Link For LinkedIn', async ({ page }) => {
         //Go To The HomePage
+            await allure.severity('P1')
             await allure.step('Navigate To The Url',async () => {
             await homePage.navigate();
         });
@@ -171,6 +180,7 @@ test.describe('HomePage', () => {
 
     test('Specials Page', async ({ page }) => {
         //Go To The HomePage
+            await allure.severity('P1')
             await allure.step('Navigate To The Url',async () => {
             await homePage.navigate(); 
             });
@@ -193,6 +203,7 @@ test.describe('HomePage', () => {
 
     test('Go To Checkout page', async ({ page }) => {
         //Go To The HomePage
+            await allure.severity('P1')
             await allure.step('Navigate To The Url',async () => {
             await homePage.navigate();
         });
