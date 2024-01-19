@@ -2,12 +2,12 @@ import {expect, Locator, Page } from '@playwright/test';
 
 export class ContactPage {
     page: Page;
-    addressStoreName: any;
-    storePhoneNumber: any;
-    firstName: any;
-    eMail: any;
-    enqMessage: any;
-    submitButton: any;
+    addressStoreName: Locator;
+    storePhoneNumber: Locator;
+    firstName: Locator;
+    eMail: Locator;
+    enqMessage: Locator;
+    submitButton: Locator;
     successfullMessage: any;
     contactUSHead: any;
 
@@ -15,9 +15,9 @@ export class ContactPage {
         this.page = page;
         this.addressStoreName = page.getByText('Address: Automation Test');
         this.storePhoneNumber = page.getByText('Telephone: 012345');
-        this.firstName = page.getByLabel('First name:', {exact: true});
-        this.eMail = page.getByLabel('Email:', {exact: true});
-        this.enqMessage = page.getByLabel('Enquiry:', {exact: true});
+        this.firstName = page.locator('//*[@id="ContactUsFrm_first_name"]');
+        this.eMail = page.locator('//*[@id="ContactUsFrm_email"]');
+        this.enqMessage = page.locator('textarea[name="enquiry"]');
         this.submitButton = page.getByRole('button', { name: ' Submit' });
         this.successfullMessage = page.getByText('Your Enquiry has been successfully sent to the store owner!');
         this.contactUSHead = page.getByRole('heading', { name: ' Contact Us' });

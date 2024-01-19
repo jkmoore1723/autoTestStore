@@ -30,6 +30,12 @@ test.describe('Contact Us Page', () => {
         });
 
     test('Fill Out Contact Form', async ({ page }) => {
+        //Navigate To The Url Site
+            await allure.severity('P1')
+            await allure.step('Navigate To The Url',async () => {
+            await contactPage.navigateCont();
+            })
+        
         //Fill Out The Contact Form
             await allure.severity('P1')
             await allure.step('Fill Out Contact Form',async () => {
@@ -43,12 +49,12 @@ test.describe('Contact Us Page', () => {
 
         //(Assertion) - Verify The Contact US Heading
             await allure.step('Verify The Contact Us Heading',async () => {
-            await contactPage.contactUSHead.toBeVisible()
+            await expect(contactPage.contactUSHead).toBeVisible();
             })
 
         //(Assertion) - Verify The Successful Message Being Sent
             await allure.step('Verify The Successful Message Sent',async () => {
-            await expect(contactPage.successfullMessage()).toBeVisible();
+            await expect(contactPage.successfullMessage).toBeVisible();
             })
 
         });  
