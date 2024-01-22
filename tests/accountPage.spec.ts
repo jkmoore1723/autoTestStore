@@ -27,7 +27,7 @@ test.describe('Account', () => {
 
     });
 
-    test('Click On The Login Link & Verify Url (Footer)', async ({ page }) => {
+    test('Click On The Login Link & Verify Url (Footer Check)', async ({ page }) => {
         //Navigate To The Url Site
             await allure.severity('P1');
             await allure.step('Navigate To The HomePage Url Site',async () => {
