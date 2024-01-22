@@ -8,11 +8,16 @@ test.describe('Account', () => {
         accountPage = new AccountPage(page);
     })
     
-    test('Navigate To Register Or Login Page', async ({ page }) => {
+    test('Click On Register Or Login Link & Verify The Url', async ({ page }) => {
         //Navigate To The Url Site
             await allure.severity('P1');
-            await allure.step('Navigate To The Url Site',async () => {
-            await accountPage.navigateAcct();
+            await allure.step('Navigate To The Url HomePage Site',async () => {
+            await accountPage.navigateMain();
+        })
+
+        //Click On The Login Or Register Link
+            await allure.step('Click On The Login Or Register Link',async () => {
+            await accountPage.loginOrRegistLink.click();
         })
 
         //(Assertion) - Verify The Url For The Site
@@ -25,7 +30,7 @@ test.describe('Account', () => {
     test('Click On The Login Link & Verify Url (Footer)', async ({ page }) => {
         //Navigate To The Url Site
             await allure.severity('P1');
-            await allure.step('Navigate To The Url Site',async () => {
+            await allure.step('Navigate To The HomePage Url Site',async () => {
             await accountPage.navigateMain();
         })
 
@@ -47,10 +52,10 @@ test.describe('Account', () => {
     });
     
     test('Register For A Account', async ({ page }) => {
-        //(*Finish Creating account*)
+        //*(Finish Assertion error message)
         //Navigate To The Account Url Site
             await allure.severity('P1');
-            await allure.step('Navigate To The Url Site',async () => {
+            await allure.step('Navigate To The Url Account Site',async () => {
             await accountPage.navigateAcct();
         })
 
@@ -63,13 +68,24 @@ test.describe('Account', () => {
             await allure.step('Click On The Continue Button',async () => {
             await accountPage.continueRegButton.click();
         })
+
+        //Fill Out Register Account Form
+            await allure.step('Fill Out Register Form',async () => {
+            await accountPage.registerForm();   
+        })
+
+        //(Assertion)- Verify The Account Created Heading Text
+            await allure.step('Verify The Account Created Heading Text',async () => {
+            await expect(accountPage.accountCreatedHead).toHaveText('Your Account Has Been Created!');
+        });
+            
         
     });
 
     test('Click The Forgot Password Link & Verify The Url', async ({ page }) => {
         //Navigate To The Url Site
             await allure.severity('P1');
-            await allure.step('Navigate To The Url Site',async () => {
+            await allure.step('Navigate To The Account Url Site',async () => {
             await accountPage.navigateAcct();
         })
 
@@ -94,7 +110,7 @@ test.describe('Account', () => {
         //(*Tentative Test Case*) - Have to create account to make a forgot password request
         //Navigate To The Url Site
             await allure.severity('P1');
-            await allure.step('Navigate To The Url Site',async () => {
+            await allure.step('Navigate To The Account Url Site',async () => {
             await accountPage.navigateAcct();
         })
 
@@ -115,7 +131,7 @@ test.describe('Account', () => {
     test('Click On Forgot Your Login & Verify The Url', async ({ page }) => {
         //Navigate To The Url Site
             await allure.severity('P1');
-            await allure.step('Navigate To The Url Site',async () => {
+            await allure.step('Navigate To The Account Url Site',async () => {
             await accountPage.navigateAcct();
         })
 
@@ -140,7 +156,7 @@ test.describe('Account', () => {
         //(*Tenative Test Case*)- Have to create account to make a forgot login request
         //Navigate To The Url Site
             await allure.severity('P1');
-            await allure.step('Navigate To The Url Site',async () => {
+            await allure.step('Navigate To The Account Url Site',async () => {
             await accountPage.navigateAcct();
         })
 
