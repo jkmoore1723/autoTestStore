@@ -1,6 +1,7 @@
 import {expect, test} from '@playwright/test';
 import {allure} from 'allure-playwright';
 import { AccountPage } from '../pages/components/accountPage.pages';
+import {faker} from '@faker-js/faker'
 
 test.describe('Account', () => {
     let accountPage: AccountPage
@@ -52,7 +53,7 @@ test.describe('Account', () => {
     });
     
     test('Register For A Account', async ({ page }) => {
-        //*(Finish Assertion error message)
+        //*(Bug - The regristration form is set to united kingdom as default, when the website is set to united states)
         //Navigate To The Account Url Site
             await allure.severity('P1');
             await allure.step('Navigate To The Url Account Site',async () => {
@@ -71,12 +72,12 @@ test.describe('Account', () => {
 
         //Fill Out Register Account Form
             await allure.step('Fill Out Register Form',async () => {
-            await accountPage.registerForm();   
+            await accountPage.registerForm(faker.person.firstName(), faker.person.lastName(), faker.internet.email(), faker.location.streetAddress(), faker.location.city(), faker.location.state(), faker.location.zipCode(), faker.location.country());   
         })
 
-        //(Assertion)- Verify The Account Created Heading Text
-            await allure.step('Verify The Account Created Heading Text',async () => {
-            await expect(accountPage.myAccountCreated).toBeVisible();
+        //(Assertion)- Verify The Successful Account Created Url
+            await allure.step('Verify The Account Created Url',async () => {
+            await expect(page).toHaveURL('https://automationteststore.com/index.php?rt=account/success');
         });
             
         

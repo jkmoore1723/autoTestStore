@@ -34,7 +34,7 @@ export class AccountPage {
     registerContinBtn: Locator;
     accountCreatedHead: Locator;
     loginOrRegistLink: Locator;
-    myAccountCreated: Locator;
+   
 
     
     
@@ -71,7 +71,7 @@ export class AccountPage {
         this.registerSubsButton = page.getByLabel('No');
         this.registerAgreeTerms = page.locator('#AccountFrm_agree');
         this.registerContinBtn = page.getByRole('button', {name: ' Continue '});
-        this.myAccountCreated = page.locator('#heading2');
+        
 
     }
     async navigateAcct() {
@@ -90,22 +90,23 @@ export class AccountPage {
     async navigateMain() {
         await this.page.goto('https://automationteststore.com');
     }
-    async registerForm() {
-        await this.registerFirstName.fill('James');
-        await this.registerLastName.fill('St.Patrick');
-        await this.registerEmail.fill('james.stpatrick1723@icloud.com');
-        await this.registerPhoneNum.fill('4045211464');
-        await this.registerCompany.fill('Club Truth');
-        await this.registerAddress_.fill('1 King Street');
-        await this.registerCity.fill('London');
-        await this.registerRegState.selectOption('Greater London');
-        await this.registerZipcode.fill('WC05 2GJ');
-        await this.registerCountry.selectOption('United Kingdom');
-        await this.registerLoginNam.fill('James.pat1723');
-        await this.registerPassWord.fill('Moore1723!');
-        await this.registerPassWordConf.fill('Moore1723!');
+    async registerForm(name: string, email: string, address: string, city: string, state: string, zipcode: string, country: string, password: string ) {
+        await this.registerFirstName.fill(name);
+        await this.registerLastName.fill(name);
+        await this.registerEmail.fill(email);
+        await this.registerAddress_.fill(address);
+        await this.registerCity.fill(city);
+        await this.registerRegState.selectOption(state);
+        await this.registerZipcode.fill(zipcode);
+        await this.registerCountry.selectOption(country);
+        await this.registerLoginNam.fill(name);
+        await this.registerPassWord.fill(password);
+        await this.registerPassWordConf.fill(password);
         await this.registerSubsButton.click();
         await this.registerAgreeTerms.check();
         await this.registerContinBtn.click();
+    }
+    async navigateAcctUrl() {
+        await this.page.goto('https://automationteststore.com/index.php?rt=account/success');
     }
 }
