@@ -34,6 +34,7 @@ export class AccountPage {
     registerContinBtn: Locator;
     accountCreatedHead: Locator;
     loginOrRegistLink: Locator;
+    orderHistButton: Locator;
    
 
     
@@ -71,6 +72,7 @@ export class AccountPage {
         this.registerSubsButton = page.getByLabel('No');
         this.registerAgreeTerms = page.locator('#AccountFrm_agree');
         this.registerContinBtn = page.getByRole('button', {name: ' Continue '});
+        this.orderHistButton = page.getByRole('link', {name: ' Order history'});
         
 
     }

@@ -19,7 +19,7 @@ test.describe('HomePage', () => {
         //(Assertion) - Confirm The URL
             await allure.step('Verify The Url Is Present', async () => {
             await expect(page).toHaveURL('https://automationteststore.com'); 
-            });
+        });
     })
 
     test('Click On HomePage Button To Return To HomePage', async ({ page }) => {
@@ -183,7 +183,7 @@ test.describe('HomePage', () => {
             await allure.severity('P1')
             await allure.step('Navigate To The Url',async () => {
             await homePage.navigate(); 
-            });
+        });
             
         //Click On The Specials Nav Link
             await allure.step('Click On The Specials Nav Link',async () => {
