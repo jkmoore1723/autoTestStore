@@ -29,6 +29,16 @@
       "httpOnly": false,
       "secure": true,
       "sameSite": "Lax"
+    },
+    {
+      "name": "customer",
+      "value": "QWFaTENqOEwvVEZ2WnJOa0lwd0pIbmtobVRLbnVpWWM1em94cU5aWlhCbXUxNEZiWEgxK2ZVN1RNbEJuOFR0eUc4QldWcEgvNStDTVMxM3BsdTE2aXl6Y1liZkNxUU8wd0t6QjN2eEFHZTBOWmRtNjNXQm9ydExqN01XTXVaN3BFV3JYK1JuUHNrNDhVbklXYlVFZ0ZBPT06OvViQSoVMdKx41rgsRxhbxc%3D",
+      "domain": "automationteststore.com",
+      "path": "/",
+      "expires": 1738184121.604801,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
     }
   ],
   "origins": []

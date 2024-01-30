@@ -3,7 +3,6 @@ import {allure} from 'allure-playwright'
 
 test.describe('Account Login Page', () => {
     test.use({ storageState: 'notLoggedInState.json'})
-//(*Still working on not logged in state)
     test('Verify The Login Button For Account Page ', async ({ page }) => {
         //Go To The Account Url Site
             await allure.step('Navigate To The Account Url Site',async () => {
@@ -12,7 +11,7 @@ test.describe('Account Login Page', () => {
 
         //(Assertion) - Verify The Login Button
             await allure.step('Verify The Login Button',async () => {
-            await expect(page.getByRole('button', { name: ' Login' })).toBeVisible();
+            await expect(page.getByRole('button', { name: ' Login' })).toBeEnabled();
         });
         
     });

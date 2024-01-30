@@ -9,8 +9,8 @@ async function globalSetup(config: FullConfig) {
     await page.goto('https://automationteststore.com/index.php?rt=account/login');
     await page.context().storageState({ path: 'notLoggedInState.json' });
 
-    await page.getByLabel('loginFrm_loginname').fill('jamesjones1723');
-    await page.getByLabel('loginFrm_password').fill('Moore1723!');
+    await page.locator('#loginFrm_loginname').fill('jamesjones1723');
+    await page.locator('#loginFrm_password').fill('Moore1723!');
     await page.getByRole('button', { name: ' Login' }).click();
 
     //Save As LoggedInState
