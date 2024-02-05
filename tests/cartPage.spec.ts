@@ -12,9 +12,13 @@ test.describe('Cart Page', () => {
 
 test('Add An Item To The Cart', async ({ page }) => {
     //Navigate To The HomePage
-    //(* add helper method into pages)
         await allure.step('Navigate To The HomePage',async () => {
         await cartPage.navigateAcct();
+    })
+
+    //Click On The login Or Register Link
+        await allure.step('Click On The Login Or Register link',async () => {
+        await cartPage.loginOrRegistLink.click();
     })
 
     //
