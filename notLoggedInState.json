@@ -2,7 +2,7 @@
   "cookies": [
     {
       "name": "AC_SF_8CEFDA09D5",
-      "value": "beef52aa1aea80f0e8bd89d8e5a28cec",
+      "value": "fd70a28f68444591bb98e0d743ae13bb",
       "domain": "automationteststore.com",
       "path": "/",
       "expires": -1,
@@ -15,7 +15,7 @@
       "value": "en",
       "domain": "automationteststore.com",
       "path": "/",
-      "expires": 1709761697.335006,
+      "expires": 1709830429.705419,
       "httpOnly": false,
       "secure": true,
       "sameSite": "Lax"
@@ -25,7 +25,7 @@
       "value": "USD",
       "domain": "automationteststore.com",
       "path": "/",
-      "expires": 1709761697.33507,
+      "expires": 1709830429.705484,
       "httpOnly": false,
       "secure": true,
       "sameSite": "Lax"

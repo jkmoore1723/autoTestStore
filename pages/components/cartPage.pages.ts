@@ -1,4 +1,5 @@
 import {Page, expect, Locator,} from '@playwright/test'
+import { link } from 'fs';
 
 export class CartPage {
     page: Page;
@@ -7,6 +8,12 @@ export class CartPage {
     mensSprayItem: Locator;
     addToCartBtn: Locator;
     itemInCart: Locator;
+    booksNavLink: Locator;
+    bookNumOne: Locator;
+    fragNavLink: Locator;
+    fragGucciSpray: Locator;
+    itemInCartOne: Locator;
+    itemInCartTwo: Locator;
 
     constructor(page: Page) {
         this.page = page;
@@ -15,6 +22,12 @@ export class CartPage {
         this.mensSprayItem = page.getByRole('link', {name: 'ck IN2U Eau De Toilette Spray'});
         this.addToCartBtn = page.getByRole('link', {name: '  Add to Cart '});
         this.itemInCart = page.getByRole('cell', { name: 'ck IN2U Eau De Toilette Spray' });
+        this.booksNavLink = page.getByRole('link', {name: 'Books', exact: true});
+        this.bookNumOne = page.getByRole('link', {name:'Allegiant by Veronica Roth', exact: true});
+        this.fragNavLink = page.getByRole('link', {name:'Fragrance', exact: true});
+        this.fragGucciSpray = page.getByRole('link', {name: 'Gucci Guilty', exact: true});
+        this.itemInCartOne = page.getByRole('cell', {name:'Allegiant by Veronica Roth'});
+        this.itemInCartTwo = page.getByRole('cell', {name: 'Gucci Guilty'});
 
 
     }
