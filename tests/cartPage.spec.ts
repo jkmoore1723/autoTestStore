@@ -13,22 +13,22 @@ test.describe('Cart Page', () => {
 test('Add An Item To The Cart', async ({ page }) => {
     //Navigate To The HomePage
         await allure.step('Navigate To The HomePage',async () => {
-        await cartPage.navigateAcct();
+        await cartPage.navigateAcct()
     });
 
     //Click On The Mens Nav Link
         await allure.step('Click On The Mens Nav Link',async () => {
-        await cartPage.mensNavLink.click();
+        await cartPage.mensNavLink.click()
     });
 
     //Click On Any Item To View (Test Data: ck IN2U Eau De Toilette Spray for Him)
         await allure.step('Click On Any Item To View',async () => {
-        await cartPage.mensSprayItem.click();
+        await cartPage.mensSprayItem.click()
     });
 
     //Click On The Add To Cart Button
         await allure.step('Click On The Add To Cart Button',async () => {
-        await cartPage.addToCartBtn.click();
+        await cartPage.addToCartBtn.click()
     });
 
     //(Assertion) - Verify The Checkout Url
@@ -38,7 +38,7 @@ test('Add An Item To The Cart', async ({ page }) => {
 
     //(Assertion) - Verify Item In Cart Is Present
         await allure.step('Verify Item In Cart Is Present',async () => {
-        await expect(cartPage.itemInCart).toBeVisible();
+        await expect(cartPage.itemInCart).toBeVisible()
     });
 
   })
@@ -53,7 +53,7 @@ test('Adding Multiple Items To Cart', async ({ page }) => {
         await cartPage.booksNavLink.click()
     });
     
-    //Click On Any Item To View (Test Data:Allegiant by Veronica Roth,  )
+    //Click On Any Item To View (Test Data: Allegiant by Veronica Roth Book)
         await allure.step('Click On Any Item To Add To Cart',async () => {
         await cartPage.bookNumOne.click()
     });
@@ -84,6 +84,35 @@ test('Adding Multiple Items To Cart', async ({ page }) => {
         await expect(cartPage.itemInCartTwo).toBeVisible()
     });
 
-     
+})
+
+test('Delete An Item From Cart', async ({ page }) => {
+    //Navigate To The HomePage
+        await allure.step('Navigate To The HomePage',async () => {
+        await cartPage.navigateAcct()
+    });
+
+    //Click On The Cart Link
+        await allure.step('Click On The Cart Link',async () => {
+        await cartPage.cartNavLink.click()
+    });
+
+    //Delete Item From Cart(Test data: Allegiant by Veronica Roth Book)
+        await allure.step('Delete Item From Cart',async () => {
+        await cartPage.trashBtn.click()
+    });
+
+    //(Assertion) - Verify The Item Is Not Visible In Cart
+        await allure.step('Verify The Item Is Not Visible In Cart',async () => {
+        await expect(cartPage.itemInCartOne).not.toBeVisible();
+    });
+
+     //(Assertion) - Verify One Item In Cart(Test data: Gucci Spray)
+        await allure.step('Verify One Item In Cart',async () => {
+        await expect(cartPage.itemInCartTwo).toBeVisible();
+    });
+
+    
     })
+    
 })

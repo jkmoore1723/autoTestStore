@@ -14,6 +14,8 @@ export class CartPage {
     fragGucciSpray: Locator;
     itemInCartOne: Locator;
     itemInCartTwo: Locator;
+    cartNavLink: Locator;
+    trashBtn: Locator;
 
     constructor(page: Page) {
         this.page = page;
@@ -28,6 +30,8 @@ export class CartPage {
         this.fragGucciSpray = page.getByRole('link', {name: 'Gucci Guilty', exact: true});
         this.itemInCartOne = page.getByRole('cell', {name:'Allegiant by Veronica Roth'});
         this.itemInCartTwo = page.getByRole('cell', {name: 'Gucci Guilty'});
+        this.cartNavLink = page.getByRole('link', { name: ' Cart' });
+        this.trashBtn = page.getByRole('link', { name: '' }).first();
 
 
     }
