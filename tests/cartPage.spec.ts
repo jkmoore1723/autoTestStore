@@ -21,7 +21,7 @@ test('Add An Item To The Cart', async ({ page }) => {
         await cartPage.mensNavLink.click()
     });
 
-    //Click On Any Item To View (Test Data: ck IN2U Eau De Toilette Spray for Him)
+    //Click On Any Item To View ( Test Data: ck IN2U Eau De Toilette Spray for Him )
         await allure.step('Click On Any Item To View',async () => {
         await cartPage.mensSprayItem.click()
     });
@@ -53,7 +53,7 @@ test('Adding Multiple Items To Cart', async ({ page }) => {
         await cartPage.booksNavLink.click()
     });
     
-    //Click On Any Item To View (Test Data: Allegiant by Veronica Roth Book)
+    //Click On Any Item To View ( Test Data: Allegiant by Veronica Roth Book )
         await allure.step('Click On Any Item To Add To Cart',async () => {
         await cartPage.bookNumOne.click()
     });
@@ -68,7 +68,7 @@ test('Adding Multiple Items To Cart', async ({ page }) => {
         await cartPage.fragNavLink.click()
     });
 
-    //Click On Another Item To add To Cart
+    //Click On Another Item To add To Cart ( Test Data: Gucci Fragrance Spray )
         await allure.step('Click On Another Item To Add To Cart',async () => {
         await cartPage.fragGucciSpray.click()
     });
@@ -86,7 +86,7 @@ test('Adding Multiple Items To Cart', async ({ page }) => {
 
 })
 
-test('Delete An Item From Cart', async ({ page }) => {
+test('Delete An Item From The Cart', async ({ page }) => {
     //Navigate To The HomePage
         await allure.step('Navigate To The HomePage',async () => {
         await cartPage.navigateAcct()
@@ -102,17 +102,72 @@ test('Delete An Item From Cart', async ({ page }) => {
         await cartPage.trashBtn.click()
     });
 
-    //(Assertion) - Verify The Item Is Not Visible In Cart
-        await allure.step('Verify The Item Is Not Visible In Cart',async () => {
-        await expect(cartPage.itemInCartOne).not.toBeVisible();
+    //(Assertion) - Verify The Item Is Not Visible In The Cart
+        await allure.step('Verify The Item Is Not Visible In The Cart',async () => {
+        await expect(cartPage.itemInCartOne).not.toBeVisible()
     });
 
-     //(Assertion) - Verify One Item In Cart(Test data: Gucci Spray)
-        await allure.step('Verify One Item In Cart',async () => {
-        await expect(cartPage.itemInCartTwo).toBeVisible();
+     //(Assertion) - Verify One Item Is In The Cart(Test data: Gucci Spray)
+        await allure.step('Verify One Item Is In The Cart',async () => {
+        await expect(cartPage.itemInCartTwo).toBeVisible()
     });
 
+})
     
-    })
+test('Update Quantity Of A Item', async ({ page }) => {
+    //Navigate To The HomePage
+        await allure.step('Navigate To The HomePage',async () => {
+        await cartPage.navigateAcct()
+    });
+
+     //Click On The Cart Link
+        await allure.step('Click On The Cart Link',async () => {
+        await cartPage.cartNavLink.click()
+    });
+
+    //Change Quantity Of Item In Cart( Test Data: 2 )
+        await allure.step('Change Quantity Of Item In Cart',async () => {
+        await cartPage.updateQuanity.fill('2')
+    });
+
+    //Click On The Update Button
+        await allure.step('Click On The Update Button',async () => {
+        await cartPage.updateQuanBtn.click()
+    });
+
+    //(Assertion) - Verify The Quantity Is Updated 
+        await allure.step('Verify The Quantity Is Updated',async () => {
+        await expect(cartPage.updateQuanity).toHaveValue('2')
+    });
+
+})
+ 
+test('Outdated Coupon Error', async ({ page }) => {
+    //Navigate To The HomePage
+        await allure.step('Navigate To The HomePage',async () => {
+        await cartPage.navigateAcct()
+    });
+
+    //Click On The Cart Link
+        await allure.step('Click On The Cart Link',async () => {
+        await cartPage.cartNavLink.click()
+    });
+
+    //Fill In Coupon Code In Placeholder
+        await allure.step('Fill In Coupon Code In Placeholder',async () => {
+        await cartPage.couponCode.fill('newyear2024!')
+    });
+
+    //Click On Apply Coupon Button
+        await allure.step('Click On Apply Coupon Button',async () => {
+        await cartPage.applyCouponBtn.click()
+    });
+
+    //(Assertion) - Verify The Error Coupon Alert Message
+        await allure.step('Verify The Error Coupon Alert Message',async () => {
+        await expect(cartPage.couponErrorAlert).toBeVisible()
+    });
     
+})
+
 })

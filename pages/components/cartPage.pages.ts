@@ -1,5 +1,5 @@
 import {Page, expect, Locator,} from '@playwright/test'
-import { link } from 'fs';
+
 
 export class CartPage {
     page: Page;
@@ -16,6 +16,11 @@ export class CartPage {
     itemInCartTwo: Locator;
     cartNavLink: Locator;
     trashBtn: Locator;
+    updateQuanity: Locator;
+    updateQuanBtn: Locator;
+    couponCode: Locator;
+    applyCouponBtn: Locator;
+    couponErrorAlert: Locator;
 
     constructor(page: Page) {
         this.page = page;
@@ -32,6 +37,11 @@ export class CartPage {
         this.itemInCartTwo = page.getByRole('cell', {name: 'Gucci Guilty'});
         this.cartNavLink = page.getByRole('link', { name: ' Cart' });
         this.trashBtn = page.getByRole('link', { name: '' }).first();
+        this.updateQuanity = page.locator('input[name="quantity\\[102\\:c1d1ba48cdfdc495ed98f22b80419edb\\]"]');
+        this.updateQuanBtn = page.getByRole('button', { name: ' Update' });
+        this.couponCode = page.locator('#coupon_coupon');
+        this.applyCouponBtn = page.locator('#apply_coupon_btn');
+        this.couponErrorAlert = page.getByText("Coupon is either invalid, expired or reached it's usage limit!");
 
 
     }
