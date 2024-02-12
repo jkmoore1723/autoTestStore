@@ -50,7 +50,7 @@ test.describe('HomePage', () => {
             await allure.severity('P1')
             await allure.step('Navigate To The Url',async () => {
             await homePage.navigate(); 
-            });
+        });
            
          //(Assertion) - Verifying The Nav Links List
          await allure.step('Verify All The Navigation Links',async () => {
@@ -68,11 +68,11 @@ test.describe('HomePage', () => {
          //Subcribe To Newsletter By Entering Email & Click Submit Button
             await allure.step('Enter Email Address To Subscribe',async () => {
             await homePage.subNewsLetter.fill('james.stpatrick1723@icloud.com');  
-            });
+        });
            
             await allure.step('Click On The Subscribe Button',async () => {
             await homePage.subButton.click();  
-            });
+        });
             
         //(Assertion) - Verify The Newsletter Heading
             await allure.step('Verify The News Letter Heading',async () => {
@@ -100,7 +100,7 @@ test.describe('HomePage', () => {
         //(Assertion) - Verify That You On Men Page
             await allure.step('Verify The Men Keyword',async () => {
             await expect(homePage.menKeyWord).toHaveText('MEN');  
-            }); 
+        }); 
     })
 
     test('Change Currency', async ({ page }) => {
@@ -131,7 +131,7 @@ test.describe('HomePage', () => {
          //Click On FaceBook Icon
             await allure.step('Click On The Facebook Icon',async () => {
             await homePage.facebookIcon.click();
-         })
+         });
             
 
          //(Assertion) - Verify The Facebook URL

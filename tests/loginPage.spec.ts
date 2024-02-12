@@ -2,11 +2,12 @@ import {test , expect} from '@playwright/test'
 import {allure} from 'allure-playwright'
 
 test.describe('Account Login Page', () => {
-    test.use({ storageState: 'notLoggedInState.json'})
+    test.use({ storageState: 'notLoggedInState.json' })
+    
     test('Verify The Login Button For Account Page ', async ({ page }) => {
         //Go To The Account Url Site
             await allure.step('Navigate To The Account Url Site',async () => {
-            await page.goto('https://automationteststore.com/index.php?rt=account/login');
+            await page.goto('/');
         });
 
         //(Assertion) - Verify The Login Button

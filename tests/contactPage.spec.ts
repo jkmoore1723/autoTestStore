@@ -27,7 +27,7 @@ test('Navigate To The Contact Us Page', async ({ page }) => {
         await allure.step('Verify The Address Information & Phone Number',async () => {
         await expect(contactPage.addressStoreName).toBeVisible()
         await expect(contactPage.storePhoneNumber).toBeVisible()
-     });
+    });
 
 });
 
