@@ -23,6 +23,7 @@ test.describe('HomePage', () => {
     })
 
     test('Click On HomePage Button To Return To HomePage', async ({ page }) => {
+        //{Need To Fix Test: Three Elements Found}
         //Go To The HomePage
             await allure.severity('P1')
             await allure.step('Navigate To The Url', async () => {
@@ -60,6 +61,7 @@ test.describe('HomePage', () => {
 
     test('Subscribe To News Letter', async ({ page }) => {
         //Go To The HomePage
+         //{Need To Fix Test: Can't Find Get By Text}
             await allure.severity('P1')
             await allure.step('Navigate To The Url',async () => {
             await homePage.navigate();
@@ -81,6 +83,7 @@ test.describe('HomePage', () => {
     })
 
     test('Search For An Item', async ({ page }) => {
+        //{Need To Fix Test: Can't Find Mens Nav Link}
         //Go To The HomePage
             await allure.severity('P1')
             await allure.step('Navigate To The Url',async () => {
@@ -104,6 +107,7 @@ test.describe('HomePage', () => {
     })
 
     test('Change Currency', async ({ page }) => {
+        //{Need To Fix Test: Dropped Down Option for Currency}
         //Go To The HomePage
             await allure.severity('P1')
             await allure.step('Navigate To The Url',async () => {
@@ -123,6 +127,7 @@ test.describe('HomePage', () => {
 
     test('Social Media Link For Facebook', async ({ page }) => {
          //Go To The HomePage
+         //{Need To Fix Test: New Tab Page Opening}
             await allure.severity('P1')
             await allure.step('Navigate To The Url',async () => {
             await homePage.navigate(); 
@@ -142,6 +147,7 @@ test.describe('HomePage', () => {
 
     test('Social Media Link For Twitter', async ({ page }) => {
         //Go To The HomePage
+        //{Need To Fix Test: New Tab Page Opening}
             await allure.severity('P1')
             await allure.step('Navigate To The Url',async () => {
             await homePage.navigate();
@@ -162,6 +168,7 @@ test.describe('HomePage', () => {
     })
     test('Social Media Link For LinkedIn', async ({ page }) => {
         //Go To The HomePage
+         //{Need To Fix Test: New Tab Page Opening}
             await allure.severity('P1')
             await allure.step('Navigate To The Url',async () => {
             await homePage.navigate();

@@ -38,9 +38,9 @@ export class HomePage {
         this.menKeyWord = page.locator('#keyword');
         this.currencyButtonUS = page.locator('a').filter({ hasText: '$ US Dollar' }).first();
         this.currencyButtonEuro = page.locator('#block_frame_featured_1769').getByText('17.83€');
-        this.facebookIcon = page.getByRole('link', {name: 'Facebook'});
-        this.twitterIcon =  page.getByRole('link', {name: 'Twitter'});
-        this.linkedinIcon = page.getByRole('link',{name: 'Linkedin'});
+        this.facebookIcon = page.getByRole('banner').getByRole('link', {name: 'Facebook'});
+        this.twitterIcon =  page.getByRole('banner').getByRole('link', {name: 'Twitter'});
+        this.linkedinIcon = page.getByRole('banner').getByRole('link',{name: 'Linkedin'});
         this.specialsLinkPage = page.getByRole('link', {name: 'SPECIALS'});
         this.saleIcon = page.locator('.sale').first();
         this.checkoutLink = page.getByRole('link',{name: 'CHECKOUT'});
