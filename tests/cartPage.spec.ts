@@ -101,6 +101,7 @@ test('Adding Multiple Items To Cart', async ({ page }) => {
 })
 
 test('Delete An Item From The Cart', async ({ page }) => {
+    //{Test Fix: Need To Update The Locator. The Locator Has 3 Locators To Use When Deleting A Item From The Cart}
     //Navigate To The HomePage
         await allure.severity('P1')
         await allure.step('Navigate To The HomePage',async () => {
