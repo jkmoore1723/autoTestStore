@@ -247,7 +247,7 @@ test('Standard Flow Checkout', async ({ page }) => {
 })
 
 test.describe('Checkout Guest User', () => {
-    test.use({ storageState: 'notLoggedInState.json'})
+    test.use({ storageState: { cookies: [], origins: [] } });
     let cartPage: CartPage
   
   test.beforeEach(async ({ page }) => {
