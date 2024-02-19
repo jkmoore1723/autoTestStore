@@ -101,7 +101,6 @@ test('Adding Multiple Items To Cart', async ({ page }) => {
 })
 
 test('Delete An Item From The Cart', async ({ page }) => {
-    //{Test Fix: Need To Update The Locator. The Locator Has 3 Locators To Use When Deleting A Item From The Cart}
     //Navigate To The HomePage
         await allure.severity('P1')
         await allure.step('Navigate To The HomePage',async () => {
@@ -201,7 +200,7 @@ test('Outdated Coupon Error', async ({ page }) => {
 })
 
 test('Standard Flow Checkout', async ({ page }) => {
-     //Navigate To The HomePage
+    //Navigate To The HomePage
         await allure.severity('P1')
         await allure.step('Navigate To The HomePage',async () => {
         await cartPage.navigateAcct()
@@ -255,6 +254,7 @@ test.describe('Checkout Guest User', () => {
     cartPage = new CartPage(page)
 })
 test('Checkout As A Guest User', async ({ page }) => {
+    //{Test: Need To Include step; Select As Guest User And Create A Helper Method For Filling Out The Guest User Info}
     //Navigate To The HomePage
         await allure.severity('P1')
         await allure.step('Navigate To The HomePage',async () => {
