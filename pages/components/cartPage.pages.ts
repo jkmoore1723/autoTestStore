@@ -41,7 +41,7 @@ export class CartPage {
         this.itemInCartOne = page.getByRole('cell', {name:'Allegiant by Veronica Roth'});
         this.itemInCartTwo = page.getByRole('cell', {name: 'Gucci Guilty'});
         this.cartNavLink = page.getByRole('link', { name: ' Cart' });
-        this.trashBtn = page.getByRole('link', { name: '' });
+        this.trashBtn = page.getByRole('link', { name: '' }).nth(1);
         this.updateQuanity = page.locator('input[name="quantity\\[102\\:c1d1ba48cdfdc495ed98f22b80419edb\\]"]');
         this.updateQuanBtn = page.getByRole('button', { name: ' Update' });
         this.couponCode = page.locator('#coupon_coupon');
