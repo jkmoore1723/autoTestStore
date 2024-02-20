@@ -2,7 +2,7 @@
   "cookies": [
     {
       "name": "AC_SF_8CEFDA09D5",
-      "value": "c460553e392ce66a23b943d1182d6fec",
+      "value": "2a34eac7a93c19ccae1b13ee83c196f4",
       "domain": "automationteststore.com",
       "path": "/",
       "expires": -1,
@@ -15,7 +15,7 @@
       "value": "en",
       "domain": "automationteststore.com",
       "path": "/",
-      "expires": 1710966868.989616,
+      "expires": 1711043559.064777,
       "httpOnly": false,
       "secure": true,
       "sameSite": "Lax"
@@ -25,17 +25,17 @@
       "value": "USD",
       "domain": "automationteststore.com",
       "path": "/",
-      "expires": 1710966868.989683,
+      "expires": 1711043559.064843,
       "httpOnly": false,
       "secure": true,
       "sameSite": "Lax"
     },
     {
       "name": "customer",
-      "value": "V2NnZ00yNElvTG80M0NqcEtqSU1NYzNmNUVwVnpEeXhTSkd6NVg2dWM4eGpNQnV3bTdzYzh2UURwUE5KTWJkV3lVRk1xaXo0dExrMDEwRDFJbzdwZGxScUlySzNNZk5HbGNnamVWZ3FhcE9DRW9WL0xpVTF3ZlcrN1ZCb0RYZFhqbXlCeXB6OHNwZThBL05YWnlublZnPT06OgXMC9vMpaj-PWQw0B8Qt70%3D",
+      "value": "TlJOQk5nL2J4dFExcHl4VEptUU1TME5iY3dkNTFsT3NXRzZGcSs3NU5iNE5QbzFtR1RjM1FsZ2FsZlNJWkcreFlHZ2t0MEZUajIreDNIRDU1cW14eE1nV1FSeXZKYWlOVlNCVzBpRUdrTDBjejM1bW5sdk8ydmI1UFExOFdCSkt4TThnNXpYTEZENE8zenhyWjE3Q0pnPT06OmFjw146bJ24NdbLIn6dmag%3D",
       "domain": "automationteststore.com",
       "path": "/",
-      "expires": 1739910871.725138,
+      "expires": 1739987560.617145,
       "httpOnly": true,
       "secure": true,
       "sameSite": "Lax"

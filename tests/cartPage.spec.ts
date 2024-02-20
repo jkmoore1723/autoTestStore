@@ -11,6 +11,7 @@ test.describe('Cart Page', () => {
   })
 
 test('Add An Item To The Cart', async ({ page }) => {
+    //{Test: Three Failed Test}
     //Navigate To The HomePage
         await allure.severity('P1')
         await allure.step('Navigate To The HomePage',async () => {
@@ -254,7 +255,7 @@ test.describe('Checkout Guest User', () => {
     cartPage = new CartPage(page)
 })
 test('Checkout As A Guest User', async ({ page }) => {
-    //{Test: Need To Include step; Select As Guest User And Create A Helper Method For Filling Out The Guest User Info}
+    //{Test: Guest User Information Is Not Filled Out}
     //Navigate To The HomePage
         await allure.severity('P1')
         await allure.step('Navigate To The HomePage',async () => {
@@ -283,6 +284,30 @@ test('Checkout As A Guest User', async ({ page }) => {
         await allure.severity('P1')
         await allure.step('Click On The Checkout Button',async () => {
         await cartPage.checkOutBtn.click()
+    });
+
+    //Click On The Guest Checkout Button
+        await allure.severity('P1')
+        await allure.step('Click On The Guest Checkout Button',async () => {
+        await cartPage.guestCheckOutBtn.click()
+    });
+
+    //Click On The Continue Button
+        await allure.severity('P1')
+        await allure.step('Click On The Continue Button',async () => {
+        await cartPage.continueBtn.click()
+    });
+
+    //Fill Out The Guest User Information
+        await allure.severity('P1')
+        await allure.step('Fill Out The Guest User Information',async () => {
+        await cartPage.guestCheckoutInfo()
+    });
+
+    //Click On The Continue Button
+        await allure.severity('P1')
+        await allure.step('Click On The Continue Button',async () => {
+        await cartPage.continueBtn.click()
     });
 
     //Click On The Confirm Order Button

@@ -26,6 +26,17 @@ export class CartPage {
     checkOutBtn: Locator;
     confirmOrderButton: Locator;
     successfulOrderMessage: Locator;
+    guestCheckOutBtn: Locator;
+    continueBtn: Locator;
+    guestFirstNam: Locator;
+    guestLastName: Locator;
+    guestTelephone: Locator;
+    guestEmail: Locator;
+    guestAddress: Locator;
+    guestCity: Locator;
+    guestState: Locator;
+    guestPostalCode: Locator;
+    guestCountry: Locator;
 
     constructor(page: Page) {
         this.page = page;
@@ -50,6 +61,17 @@ export class CartPage {
         this.skincareNavLink = page.getByRole('link', {name: 'Skincare'});
         this.skincareItem = page.getByRole('link', {name:'Absolue Eye Precious Cells', exact: true});
         this.checkOutBtn = page.locator('#cart_checkout2');
+        this.guestCheckOutBtn = page.getByLabel('Guest Checkout');
+        this.continueBtn = page.getByRole('button', { name: ' Continue' });
+        this.guestFirstNam = page.locator('#guestFrm_firstname');
+        this.guestLastName = page.locator('#guestFrm_lastname');
+        this.guestEmail = page.locator('#guestFrm_email');
+        this.guestTelephone = page.locator('#guestFrm_telephone');
+        this.guestAddress = page.locator('#guestFrm_address_1');
+        this.guestCity = page.locator('#guestFrm_city');
+        this.guestState = page.locator('#guestFrm_zone_id');
+        this.guestPostalCode = page.locator('#guestFrm_postcode')
+        this.guestCountry = page.locator('#guestFrm_country_id');
         this.confirmOrderButton = page.getByRole('button', {name:' Confirm Order '})
         this.successfulOrderMessage = page.getByText(' Your Order Has Been Processed!');
 
@@ -57,5 +79,18 @@ export class CartPage {
     }
     async navigateAcct() {
         await this.page.goto('https://automationteststore.com');
+    }
+
+    async guestCheckoutInfo() {
+        this.guestFirstNam.fill('James');
+        this.guestLastName.fill('Jones');
+        this.guestEmail.fill('james1234@icloud.com');
+        this.guestTelephone.fill('4049877456');
+        this.guestCountry.selectOption('United States');
+        this.guestAddress.fill('103 Ashton Way');
+        this.guestCity.fill('Atlanta');
+        this.guestState.selectOption('Georgia');
+        this.guestPostalCode.fill('30132');
+
     }
 }
