@@ -141,12 +141,24 @@ test('Update Quantity Of A Item', async ({ page }) => {
         await cartPage.navigateAcct()
     });
 
-     //Click On The Cart Link
+    //Click On The Fragrance Nav Link
         await allure.severity('P1')
-        await allure.step('Click On The Cart Link',async () => {
-        await cartPage.cartNavLink.click()
+        await allure.step('Click On The Frangrance Nav Link',async () => {
+        await cartPage.fragNavLink.click()
+     });
+
+    //Click On Another Item To add To Cart ( Test Data: Gucci Fragrance Spray )
+        await allure.severity('P1')
+        await allure.step('Click On Another Item To Add To Cart',async () => {
+        await cartPage.fragGucciSpray.click()
     });
 
+    //Add Item To Cart
+        await allure.severity('P1')
+        await allure.step('Add Item To Cart',async () => {
+        await cartPage.addToCartBtn.click()
+    });
+    
     //Change Quantity Of Item In Cart( Test Data: 2 )
         await allure.severity('P1')
         await allure.step('Change Quantity Of Item In Cart',async () => {
